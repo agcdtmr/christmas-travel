@@ -1,39 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import axios from 'axios';
+import {EventsView} from './src/screens/EventsView'
+import {HomeView} from './src/screens/HomeView'
+import {NavigationContainer, TabActions} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const endpoint = 'https://www.eventbriteapi.com/v3/'
-const token = 'BZW2PTENUJHKKSJDM5WA'
-// subcategories/16006
-// https://www.eventbriteapi.com/v3/users/me/?token=BZW2PTENUJHKKSJDM5WA
-// categories/
-// subcategories/16006/
+const Stack = createNativeStackNavigator();
+
 export default function App() {
-  axios({
-    method: 'get',
-    url: `${endpoint}events/subcategories/16006/?token=${token}`,
-  }).then((response) => {
-    console.log('?????????????', response)
-  })
-  .catch(error => console.log('error', error))
-
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+       <Stack.Screen name='Home' component={HomeView}/>
+       <Stack.Screen name='Events' component={EventsView}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+    
   );
 }
-
-
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
