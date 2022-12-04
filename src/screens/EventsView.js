@@ -42,16 +42,17 @@ export function EventsView() {
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+  container:{
+      flex:1,
+      backgroundColor: '#800B1A',
+      alignItems: 'center',
+      justifyContent: 'center',
+      
   },
-  text: {
-    color: 'black',
-  },
-  button: {
-    Color: '#f4d3d0'
+  text:{
+      color:"#F5D68F",
+      fontWeight: "bold",
+      fontSize:20
   }
-});
+})
+
