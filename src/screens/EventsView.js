@@ -13,6 +13,7 @@ export function EventsView() {
       method: 'get',
       url: `${API_BASE_URL}?place_id=85633337&q=christmas&completion_types=event%2Cquery&expand.destination_event=primary_venue%2Cimage`
     }).then((response) => {
+      console.log (response.data)
       setEvents(response.data.event)
     })
     .catch(error => console.log('error', error))
@@ -22,7 +23,7 @@ export function EventsView() {
 
   return (
     <View style={styles.container}>
-     
+     <Text> Events Screen</Text>
       <Text style={styles.text}>Events length is:  {events.length}</Text>
         {events.map((event) => (
           <EventCard 
