@@ -10,13 +10,14 @@ function EventCardView(props) {
 }
 
 const styles = StyleSheet.create({
-    container:{
+  container:{
       flex:1,
       backgroundColor: '#800B1A',
       alignItems: 'center',
       justifyContent: 'center',
-    },
-    text:{
+      
+  },
+  text:{
       color:"#F5D68F",
       fontWeight: "bold",
       fontSize:20

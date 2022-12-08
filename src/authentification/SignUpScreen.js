@@ -1,0 +1,35 @@
+import React from 'react';
+import { ScrollView, View, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Appbar, Button, TextInput } from 'react-native-paper';
+import {Icon} from "react-native-vector-icons";
+import { signupStyle } from './SignUpStyle';
+
+function SignUpScreen(props) {
+    const signup = () => Alert.alert ("Signup soon")
+    return (
+        <SafeAreaView style={signupStyle.container}>
+            <ScrollView>
+            <Appbar>
+            <Appbar.BackAction/>
+            <Appbar.Content title="SignUp"  ></Appbar.Content>
+            </Appbar>
+                <View style={signupStyle.card}>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Name"/>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Email" keyboardType='email-address'/>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Password" secureTextEntry={true} right={<TextInput.Icon name="eye-off"/>}  />
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Confirm Password" secureTextEntry={true} right={<TextInput.Icon name="eye-off"/>} />
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Phone" keyboardType='phone-pad'/>
+                <Button 
+                onPress={signup}
+                testID="signupButton"
+                style={signupStyle.cardbutton} buttonColor='#287D4D' textColor='#F5D68F' mode="contained">Sign Up</Button>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+        
+
+    );
+}
+
+export default SignUpScreen;
