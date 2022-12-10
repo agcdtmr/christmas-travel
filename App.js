@@ -2,7 +2,7 @@ import {EventsView} from './src/screens/EventsView';
 import {HomeView} from './src/screens/HomeView';
 import ProfileView from './src/screens/ProfileView';
 import EventCardView from './src/screens/EventCardView';
-import AuthView from './src/authentification/XAuthView';
+
 import {Provider as PaperProvider} from "react-native-paper";
 import {NavigationContainer, TabActions} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';

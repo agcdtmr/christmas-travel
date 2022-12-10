@@ -2,7 +2,6 @@ import React from 'react';
 import { ScrollView, View, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Appbar, Button, TextInput } from 'react-native-paper';
-import {Icon} from "react-native-vector-icons";
 import { signupStyle } from './SignUpStyle';
 
 function SignUpScreen(props) {
@@ -10,7 +9,7 @@ function SignUpScreen(props) {
     // const{navigation}=props;
     // const signup = () => Alert.alert ("Signup soon")
     const signup = () => props.navigation.navigate("Home")
-    
+
     return (
         <SafeAreaView style={signupStyle.container}>
             <ScrollView>
