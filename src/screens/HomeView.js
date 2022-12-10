@@ -9,7 +9,6 @@ export function HomeView() {
       <Text style={styles.text}>Homeeeeeee</Text>
       <MyButton />
       {/* onPress={ () => navigation.navigate('Events')} */}
-
     </View>
   );
 }
