@@ -7,11 +7,12 @@ import { ScrollView } from 'react-native';
 import { Formik } from 'formik';
 
 
-export default function LoginScreen(props) {
-const{navigation}=props;
+export default function LoginScreen(props) { 
 
-    const login = () => Alert.alert("Login soon")
-    const register = () => Alert.alert("Register soon")
+//    const{navigation}=props;
+    const login = () => props.navigation.navigate("Home")
+    const signup = () => props.navigation.navigate("SignUp")
+
     return (
         <SafeAreaView style={loginStyle.container}>
         <ScrollView>
@@ -37,16 +38,16 @@ const{navigation}=props;
                         <Button  style={loginStyle.cardbutton} textColor='#F5D68F'>Forgot Password</Button>
 
                         <Button 
-                        //onPress={handleSubmit}
-                        onPress={() => navigation.navigate("Home")}
+                        onPress={login}
+                        // onPress={() => navigation.navigate("Home")}
                         testID="loginButton"
                         style={loginStyle.cardbutton} buttonColor='#287D4D' textColor='#F5D68F' mode="contained">Login</Button>
 
                         <Button 
-                        onPress={() => navigation.navigate("SignUp")}
-                        // onPress={register}
+                        // onPress={() => navigation.navigate("SignUp")}
+                        onPress={signup}
                         testID="registerButton"
-                        style={loginStyle.cardbutton} buttonColor='#287D4D' textColor='#F5D68F' mode="contained">Register</Button>
+                        style={loginStyle.cardbutton} buttonColor='#287D4D' textColor='#F5D68F' mode="contained">Sign Up</Button>
 
                         </>
                     )}

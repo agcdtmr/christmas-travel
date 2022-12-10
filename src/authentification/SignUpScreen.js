@@ -6,9 +6,11 @@ import {Icon} from "react-native-vector-icons";
 import { signupStyle } from './SignUpStyle';
 
 function SignUpScreen(props) {
-    const{navigation}=props;
 
+    // const{navigation}=props;
     // const signup = () => Alert.alert ("Signup soon")
+    const signup = () => props.navigation.navigate("Home")
+    
     return (
         <SafeAreaView style={signupStyle.container}>
             <ScrollView>
@@ -27,7 +29,7 @@ function SignUpScreen(props) {
                 <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Phone" keyboardType='phone-pad'/>
                 <Button 
                 //onPress={signup}
-                onPress={() => navigation.navigate("Home")}
+                onPress={signup}
                 testID="signupButton"
                 style={signupStyle.cardbutton} buttonColor='#287D4D' textColor='#F5D68F' mode="contained">Sign Up</Button>
                 </View>
