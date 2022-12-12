@@ -1,11 +1,12 @@
-import { ImageStore, StyleSheet, Text, View, ScrollView } from 'react-native';
+import { ImageStore, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { EventCard } from '../components/EventCard';
 import { API_BASE_URL } from '@env'
+import { FlatList } from 'react-native-gesture-handler';
 
 
-//mocked data
+////////////mocked data
 const mockEvents =
 {
   "event_list": [{
@@ -164,13 +165,80 @@ const mockEvents =
 
 export function EventsView() {
 
-  const [events, setEvents] = useState([])
+  // const [events, setEvents] = useState([])
+
+  const [search, setSearch] = useState("");
+  const [filteredEvents, setFilteredEvents] =useState([]);
+  const [masterEvents, setMasterEvents] = useState([]);
 
 
  useEffect(()=> {
   console.log("setting event")
-  setEvents(mockEvents.event_list)
+  setFilteredEvents(mockEvents.event_list);
+  setMasterEvents(mockEvents.event_list);
  }, [] )
+
+ const searchFilteredEvents = (text) => {
+  if (text) {
+    const newData=masterEvents.filter(
+      function(item) {
+        const itemData=item.name
+        // ?item.title.toUpperCase()
+        // : "".toUpperCase();
+        const textData=text.toUpperCase()
+        return itemData.indexOf(textData) >-1
+      }
+    )
+    setFilteredEvents(newData)
+    setSearch(text)
+  }else {
+    setFilteredEvents(masterEvents)
+    setSearch(text)
+  }
+ };
+
+
+
+ //SEARCH BAR & FLAT LIST
+ const ItemView =({item}) => {
+  return (
+    <Text
+    onPress={() => getEvent(item)}>
+      {"~"}
+      {item.name}
+      {"~\n"}
+      {"\n"}
+      {item.summary}
+      {"\n"}
+      {"\n"}
+      {item.start_date}
+      {"  "}
+      {item.start_time}
+      {"\n"}
+      {item.end_date}
+      {"  "}
+      {item.end_time}
+    </Text>
+  )
+ }
+
+
+ const EventSeparatorView = () => {
+  return (
+    <View
+    style={{
+      height: 0.5,
+      width: '100%',
+      backgroundColor: '#C8C8C8'}} />
+  )
+ }
+
+ const getEvent = (item) => {
+  alert("Title: " + item.name + " \nSummary: " + item.summary)
+ };
+
+ 
+
 
    ////////////////////// uing mocked data due to api endpoint issue so skipping this stage
  
@@ -191,10 +259,23 @@ export function EventsView() {
 
   return (
   
-    <ScrollView>
+    
     <View style={styles.container}>
      <Text> Events Screen</Text>
-      <Text style={styles.text}>Events length is:  {events.length}</Text>
+    <TextInput
+          style={styles.textInputStyle}
+          onChangeText={(text) => searchFilteredEvents(text)}
+          value={search}
+          underlineColorAndroid="transparent"
+          placeholder="Search Here"
+        />
+  <FlatList
+  data={filteredEvents}
+  keyExtractor={(item, index) => index.toString()}
+  ItemSeparatorComponent={EventSeparatorView}
+  renderItem={ItemView}/>
+
+      {/* <Text style={styles.text}>Events length is:  {events.length}</Text>
         {events.map((event) => (
           <EventCard
             key={event.id} 
@@ -206,9 +287,9 @@ export function EventsView() {
             // ToDo: url should link to eventbrite event, event_url={event.url}
             // ToDo: event_ticket={event.ticket}
           />
-        ))}
+        ))} */}
     </View>
-    </ScrollView>
+
     
   );
 }
@@ -216,7 +297,7 @@ export function EventsView() {
 
 const styles = StyleSheet.create({
   container:{
-      padding: 20,
+      padding: 40,
       flex:1,
       backgroundColor: '#800B1A',
       alignItems: 'center',
@@ -227,6 +308,16 @@ const styles = StyleSheet.create({
       color:"#F5D68F",
       fontWeight: "bold",
       fontSize:20
-  }
+  },
+  textInputStyle: {
+    height: 40,
+    borderWidth: 1,
+    paddingLeft: 20,
+    margin: 5,
+    borderColor: '#009688',
+    backgroundColor: '#FFFFFF',
+    alignSelf:'center',
+    justifyContent:'center'
+  },
 })
 
