@@ -6,6 +6,7 @@ import { loginStyle } from './LoginStyle';
 import { ScrollView, Text } from 'react-native';
 import { Formik } from 'formik';
 import { loginForm } from './LoginForm';
+import LogIn from './auth_store/db_login_store';
 
 
 export default function LoginScreen(props) { 
@@ -17,12 +18,6 @@ export default function LoginScreen(props) {
     return (
         <SafeAreaView style={loginStyle.container}>
         <ScrollView>
-
-        {/* Replacing Appbar with the Headers from the StackNavigator - looks better  */}
-        {/* <Appbar>
-        <Appbar.BackAction/> 
-        <Appbar.Content title="Log In" style={loginStyle.appbar}></Appbar.Content> 
-        </Appbar>     */}
 
         <View>
             <Card.Title title="Christmas Travel" titleStyle={loginStyle.cardtitle}></Card.Title>
@@ -38,6 +33,11 @@ export default function LoginScreen(props) {
                         style={loginStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' 
                         label="Email" 
                         testID='email'
+
+                        name="email"
+                        value={loginData.email}
+                        onChange={s => handleChange(s)}
+
                         keyboardType='email-address'
                         onChangeText={handleChange('email')}
                         onFocus={() => setFieldTouched('email')}/>
@@ -51,6 +51,11 @@ export default function LoginScreen(props) {
                         style={loginStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' 
                         label="Password" 
                         testID='password'
+                        
+                        name="password"
+                        value={loginData.password}
+                        onChange={s => handleChange(s)}
+
                         secureTextEntry={true}
                         onChangeText={handleChange('password')}
                         onFocus={() => setFieldTouched('password')}/>

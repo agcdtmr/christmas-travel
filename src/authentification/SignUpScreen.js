@@ -3,10 +3,11 @@ import { ScrollView, View, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Appbar, Button, TextInput } from 'react-native-paper';
 import { signupStyle } from './SignUpStyle';
+import SignUp from './auth_store/db_signup_store';
+import { useState } from "react";
 
 function SignUpScreen(props) {
 
-    // const{navigation}=props;
     // const signup = () => Alert.alert ("Signup soon")
     const signup = () => props.navigation.navigate("Home")
 
@@ -14,21 +15,15 @@ function SignUpScreen(props) {
         <SafeAreaView style={signupStyle.container}>
             <ScrollView>
 
-            {/* Replacing Appbar with the Headers from the StackNavigator - looks better  */}
-            {/* <Appbar>
-            <Appbar.BackAction/>
-            <Appbar.Content title="SignUp"  ></Appbar.Content>
-            </Appbar> */}
-
                 <View style={signupStyle.card}>
-                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Name"/>
-                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Email" keyboardType='email-address'/>
-                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Password" secureTextEntry={true} right={<TextInput.Icon name="eye-off"/>}  />
-                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Confirm Password" secureTextEntry={true} right={<TextInput.Icon name="eye-off"/>} />
-                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' label="Phone" keyboardType='phone-pad'/>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' value={signupData.username} label="Username" name= "username" onChange={s =>handleChange(s)}/>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' value={signupData.email} label="Email" name= "email" keyboardType='email-address' onChange={s =>handleChange(s)}/>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' value={signupData.password} label="Password" name= "password" secureTextEntry={true} onChange={s => handleChange(s)} />
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' value={signupData.passowrdconfirmaiton} label="Confirm Password" name="passwordconfirmation" secureTextEntry={true} onChange={s =>handleChange(s)}/>
+                <TextInput style={signupStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' value={signupData.phone} label="Phone" name="phone" keyboardType='phone-pad'onChange={s => handleChange(s)}/>
                 <Button 
-                //onPress={signup}
-                onPress={signup}
+                onPress = {() => {submit}}
+                // onPress={s=> handleSubmit(s)}
                 testID="signupButton"
                 style={signupStyle.cardbutton} buttonColor='#287D4D' textColor='#F5D68F' mode="contained">Sign Up</Button>
                 </View>
