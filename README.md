@@ -15,7 +15,7 @@
 ## Description and Our Why's
 Holiday season is approaching. The holiday season is generally thought of as a time of joy and love, but for many people, it’s a time of loneliness. Some people live far from family and miss seeing their loved ones this time of year; others dread going to holiday parties and New Year’s Eve celebrations and end up staying home. For those who feel a sense of loneliness, holidays can be a time of additional stress. 
 
-We made this mobile app, based on data from [eventbrite](https://www.eventbrite.com/platform/api), thinking of how the users can continue their traditions from home and make new ones with the people around them or meet new ones through events and activities in our app.
+We made this mobile app, based on data from [eventbrite](https://www.eventbrite.com/platform/api), thinking of how the users can continue their traditions from home and make new ones with the people around them or meet new friends through events and activities in our app.
 
 
 
