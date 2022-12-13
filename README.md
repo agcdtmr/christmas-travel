@@ -1,13 +1,3 @@
-# Christmas
-
-todos:
-
-- note on expo
-- how to run in dev mode
-- how to set up prettier
-- use `nvm` and node 16
-- eventbrite api
-
 # Christmas Travel App
 
 ## Table of content
@@ -40,7 +30,7 @@ We made this mobile app, based on data from [eventbrite](https://www.eventbrite.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Requirements
-- Application is developed in React Native 0.70.5
+- Application is developed in React Native 0.70.5 and node version 16.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
