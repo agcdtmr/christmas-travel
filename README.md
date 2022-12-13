@@ -1,12 +1,11 @@
 # Christmas Travel App
 
 ## Table of content
-- [Description](#Description)
-- [Our Why's](#Our-Why's)
+- [Description](#Description-and-Our-Why's)
+- [We wanted a tool that would:](#We-wanted-a-tool-that-would)
 - [Requirements](#Requirements)
 - [Built With](#Built-With)
 - [Getting Started](#Getting-Started)
-- [Project Files Description](#Project-Files-Description)
 - [Authors](#Authors)
 - [License](#License)
 - [Project Status](#Project-Status)
