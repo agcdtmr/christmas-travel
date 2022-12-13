@@ -47,7 +47,6 @@ This section lists all the major frameworks or libraries used to put this projec
 - [Prettier](https://prettier.io/)
 
 
-
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## Getting Started
@@ -56,13 +55,6 @@ This section lists all the major frameworks or libraries used to put this projec
 3. Install the libraries if necessary
 4. Open the repo using vscode or terminal `cd christmas-travel` `code .`
 5. Run the app using `npm run start` and choose the tool that suits your device.
-
-// ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-// ## Project Files Description
-
-
-// **Other supporting files**
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
