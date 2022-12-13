@@ -1110,17 +1110,18 @@ export function EventsView() {
       'Title: ' +
         item.name +
         '\n' +
-        ' Location: ' +
+        ' Timezone: ' +
         item.timezone +
         '\n' +
         ' Date: ' +
         item.start_date +
         '\n' +
         ' Time: ' +
-        item.start_time +
-        '\n' +
-        ' Event Link: ' +
-        item.url
+        item.start_time
+      // +
+      // '\n' +
+      // ' Event Link: ' +
+      // item.url
     )
   }
 
