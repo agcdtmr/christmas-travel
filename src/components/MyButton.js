@@ -1,36 +1,35 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import {View,Text, TouchableHighlight} from "react-native";
+import React from 'react'
+import { StyleSheet } from 'react-native'
+import { Button, View, Text, TouchableOpacity } from 'react-native'
+import { NavigationContainer, useNavigation } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 function MyButton({}) {
-    return ( 
-        <TouchableHighlight style={styles.button} underlayColor="#2C99FF"
-        onPress={() => alert("Functionality to come soon")}>
-        <View>
-        <Text style={styles.buttonText}>Go to Events</Text>
-        </View>
-        </TouchableHighlight>
+  const navigation = useNavigation()
 
-    );
+  return (
+    <View style={styles.button}>
+      <Button title="Let's do extra" color="#b51717" onPress={() => navigation.navigate('Events')} />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-    button:{
-        margin:10,
-        padding:10,
-        borderWidth:3,
-        borderColor: "#247246", 
-        backgroundColor:'#287D4D',
-        borderRadius:20,
-        alignSelf:'center',
-        
-    },
-    buttonText:{
-        fontSize:20,
-        textAlign:"center",
-        color: "#27AE61",
-        fontWeight:"bold"
-    },
-});
+  button: {
+    margin: 5,
+    padding: 10,
+    borderWidth: 3,
+    borderColor: '#b51717',
+    backgroundColor: 'white',
+    borderRadius: 20,
+    alignSelf: 'center',
+  },
+  //   buttonText: {
+  //     fontSize: 20,
+  //     textAlign: 'center',
+  //     color: '#white',
+  //     fontWeight: 'bold',
+  //   },
+})
 
-export default MyButton;
+export default MyButton

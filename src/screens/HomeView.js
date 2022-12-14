@@ -1,21 +1,22 @@
+import React from 'react'
 import { prepareErrorMessage } from '@testing-library/react-native/build/helpers/errors'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, ImageBackground, StyleSheet, Text, View, Image } from 'react-native'
 import MyButton from '../components/MyButton'
 import { Appbar, Searchbar } from 'react-native-paper'
 import { useState } from 'react'
+import Lottie from 'lottie-react-native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 // put {navigation} inside HomeView (...)
-export function HomeView() {
-  const [search, setSearch] = useState('')
-
+export function HomeView({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Appbar>
-        <Appbar.Content title="Christmas App" />
-      </Appbar>
-      <MyButton />
-      {/* onPress={ () => navigation.navigate('Events')} */}
-    </View>
+    <ImageBackground source={require('../../assets/background.jpeg')} style={styles.background}>
+      <View>
+        <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain"></Image>
+        <Text style={styles.text}>Christmas is doing a little something extra for someone. You are someone.</Text>
+        <MyButton />
+      </View>
+    </ImageBackground>
   )
 }
 
@@ -27,11 +28,30 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    color: '#F5D68F',
-    fontWeight: 'bold',
-    fontSize: 20,
+  background: {
+    width: '100%',
+    height: '100%',
   },
+  logo: {
+    width: 50,
+    height: 100,
+    marginLeft: '7%',
+    marginTop: '10%',
+  },
+  text: {
+    color: '#287d4d',
+    marginTop: '50%',
+    fontSize: 50,
+    marginLeft: 25,
+    marginRight: 25,
+    // padding: 20,
+    // marginLeft: '20%',
+  },
+  // text: {
+  //   color: '#F5D68F',
+  //   fontWeight: 'bold',
+  //   fontSize: 20,
+  // },
   button: {
     margin: 10,
     padding: 10,
