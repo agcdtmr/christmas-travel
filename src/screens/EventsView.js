@@ -25,7 +25,7 @@ const mockEvents = {
       is_online_event: false,
       is_protected_event: false,
       language: 'en-au',
-      name: 'ChristmasVille ',
+      name: 'Christmas Ville ',
       num_children: null,
       parent_url: null,
       primary_organizer_id: '54467007723',
@@ -1096,7 +1096,12 @@ export function EventsView() {
         underlineColorAndroid="transparent"
       />
 
-      <FlatList data={filteredEvents} keyExtractor={(item, index) => index.toString()} renderItem={ItemView} />
+      <FlatList
+        style={styles.flatlist}
+        data={filteredEvents}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={ItemView}
+      />
 
       {/* <Text style={styles.text}>Events length is:  {events.length}</Text>
         {events.map((event) => (
@@ -1117,11 +1122,12 @@ export function EventsView() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 60,
+    paddingTop: 50,
     flex: 1,
     backgroundColor: '#800B1A',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+  },
+  flatlist: {
+    paddingTop: 20,
   },
   text: {
     color: '#F5D68F',
