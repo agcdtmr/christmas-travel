@@ -45,6 +45,8 @@ This section lists all the major frameworks or libraries used to put this projec
 - [Redux](https://redux.js.org/introduction/getting-started)
 - [Axios](https://blog.logrocket.com/using-axios-react-native-manage-api-requests/)
 - [Prettier](https://prettier.io/)
+- [Countdown Component](react-native-countdown-component)
+- [Snowflakes Animation](https://www.npmjs.com/package/react-native-snowflakes)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
