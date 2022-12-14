@@ -12,8 +12,16 @@ import LoginScreen from './src/authentification/LoginScreen';
 import SignUpScreen from './src/authentification/SignUpScreen';
 import "react-native-gesture-handler";
 import { configureStore } from '@reduxjs/toolkit';
-
+import logInReducer from "./src/reducer/LogInSlice";
 //REDUX
+
+export const store = configureStore({
+  reducer: {
+    logIn:logInReducer
+  }
+})
+
+
 
 // const initialState = {LogIn: {username:null, password:null }}
 
@@ -49,7 +57,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-
+    <Provider store={store}>
     <NavigationContainer>
       <Tab.Navigator
       screenOptions={({route}) => ({
@@ -92,6 +100,7 @@ export default function App() {
    
       </Tab.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 };
 

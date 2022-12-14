@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Alert} from "react-native";
 import { Card, TextInput, Button, Appbar} from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,6 +10,12 @@ import { loginForm } from './LoginForm';
 
 export default function LoginScreen(props) { 
 
+    const [email, setEmail]= useState("")
+    const [password, setPassword] = useState("")
+
+    
+
+
 //    const{navigation}=props;
     const login = () => props.navigation.navigate("Home")
     const signup = () => props.navigation.navigate("SignUp")
@@ -17,12 +23,6 @@ export default function LoginScreen(props) {
     return (
         <SafeAreaView style={loginStyle.container}>
         <ScrollView>
-
-        {/* Replacing Appbar with the Headers from the StackNavigator - looks better  */}
-        {/* <Appbar>
-        <Appbar.BackAction/> 
-        <Appbar.Content title="Log In" style={loginStyle.appbar}></Appbar.Content> 
-        </Appbar>     */}
 
         <View>
             <Card.Title title="Christmas Travel" titleStyle={loginStyle.cardtitle}></Card.Title>
@@ -39,7 +39,7 @@ export default function LoginScreen(props) {
                         label="Email" 
                         testID='email'
                         keyboardType='email-address'
-                        onChangeText={handleChange('email')}
+                        onChangeText={(text)=> {handleChange('email'), setEmail(text)}}
                         onFocus={() => setFieldTouched('email')}/>
 
                         {
@@ -52,7 +52,7 @@ export default function LoginScreen(props) {
                         label="Password" 
                         testID='password'
                         secureTextEntry={true}
-                        onChangeText={handleChange('password')}
+                        onChangeText={(text) => {handleChange('password'), setPassword(text)}}
                         onFocus={() => setFieldTouched('password')}/>
 
                         {
