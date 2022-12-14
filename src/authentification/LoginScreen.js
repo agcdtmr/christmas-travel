@@ -6,6 +6,8 @@ import { loginStyle } from './LoginStyle';
 import { ScrollView, Text } from 'react-native';
 import { Formik } from 'formik';
 import { loginForm } from './LoginForm';
+import { useDispatch } from 'react-redux';
+import { onLogIn } from '../reducer/LogInSlice';
 
 
 export default function LoginScreen(props) { 
@@ -13,7 +15,13 @@ export default function LoginScreen(props) {
     const [email, setEmail]= useState("")
     const [password, setPassword] = useState("")
 
-    
+    const dispatch = useDispatch()
+
+    const sendValues=() => {
+        console.log("email sent", email)
+        console.log("password sent", password)
+        dispatch(onLogIn({email, password})) 
+    }
 
 
 //    const{navigation}=props;
@@ -29,8 +37,9 @@ export default function LoginScreen(props) {
             <Card.Content style={loginStyle.card}>
                 <Formik
                     initialValues={{email:"", password:""}}
-                    onSubmit={login}
-                    validationSchema={loginForm}>
+                    onSubmit={sendValues}
+                    >
+                        {/* validationSchema={loginForm} */}
                     {({handleSubmit, handleChange, errors, setFieldTouched, touched, values}) => (
                         <>
 
@@ -41,6 +50,7 @@ export default function LoginScreen(props) {
                         keyboardType='email-address'
                         onChangeText={(text)=> {handleChange('email'), setEmail(text)}}
                         onFocus={() => setFieldTouched('email')}/>
+
 
                         {
                             touched.email && errors.email ? 
@@ -54,6 +64,8 @@ export default function LoginScreen(props) {
                         secureTextEntry={true}
                         onChangeText={(text) => {handleChange('password'), setPassword(text)}}
                         onFocus={() => setFieldTouched('password')}/>
+
+
 
                         {
                             touched.password && errors.password ? 

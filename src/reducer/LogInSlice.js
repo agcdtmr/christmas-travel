@@ -13,6 +13,7 @@ export const logInSlice = createSlice({
     reducers:{
         //first reducer & action
         onLogIn: (state, action) => {
+            console.log("I got here")
             state.email = action.payload.email
             state.password = action.payload.password
         }
