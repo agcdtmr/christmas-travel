@@ -22,9 +22,10 @@ We made this mobile app, based on data from [eventbrite](https://www.eventbrite.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 ## We wanted a tool that would:
-1. Allow users to find christmas events
-2. Allow users to sign up and log in to save their events
-3. Allow users to log out
+
+1. Allow users to find Christmas events easily.
+2. Allow users to sign up and log in to save their events and allow users to log out.
+3. Allow users to save events and view saved events.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -47,6 +48,7 @@ This section lists all the major frameworks or libraries used to put this projec
 - [Prettier](https://prettier.io/)
 - [Countdown Component](react-native-countdown-component)
 - [Snowflakes Animation](https://www.npmjs.com/package/react-native-snowflakes)
+- [Christmas Color Palette](https://coolors.co/287d4d-27ae61-f5d68f-eca824-b51717-800b1a)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
