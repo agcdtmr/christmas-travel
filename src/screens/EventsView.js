@@ -1,9 +1,10 @@
 import { ImageStore, StyleSheet, Text, View, ScrollView, TextInput } from 'react-native'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { EventCard } from '../components/EventCard'
+import { ItemView } from '../components/ItemView'
 import { API_BASE_URL } from '@env'
 import { FlatList } from 'react-native-gesture-handler'
+import { Appbar, Searchbar } from 'react-native-paper'
 
 ////////////mocked data
 const mockEvents = {
@@ -149,7 +150,7 @@ const mockEvents = {
       is_online_event: false,
       is_protected_event: false,
       language: 'en-us',
-      name: 'Christmas_Market_Leipzig',
+      name: 'Christmas Market Leipzig',
       num_children: null,
       parent_url: null,
       primary_organizer_id: '57993280043',
@@ -1071,60 +1072,6 @@ export function EventsView() {
     }
   }
 
-  //SEARCH BAR & FLAT LIST
-  const ItemView = ({ item }) => {
-    return (
-      <Text onPress={() => getEvent(item)}>
-        {'~'}
-        {item.name}
-        {'~\n'}
-        {'\n'}
-        {item.summary}
-        {'\n'}
-        {/* {'\n'}
-        {item.start_date}
-        {'  '}
-        {item.start_time}
-        {'\n'}
-        {item.end_date}
-        {'  '}
-        {item.end_time} */}
-      </Text>
-    )
-  }
-
-  const EventSeparatorView = () => {
-    return (
-      <View
-        style={{
-          height: 0.5,
-          width: '100%',
-          backgroundColor: '#C8C8C8',
-        }}
-      />
-    )
-  }
-
-  const getEvent = (item) => {
-    alert(
-      'Title: ' +
-        item.name +
-        '\n' +
-        ' Timezone: ' +
-        item.timezone +
-        '\n' +
-        ' Date: ' +
-        item.start_date +
-        '\n' +
-        ' Time: ' +
-        item.start_time
-      // +
-      // '\n' +
-      // ' Event Link: ' +
-      // item.url
-    )
-  }
-
   ////////////////////// uing mocked data due to api endpoint issue so skipping this stage
 
   // useEffect(()=> {
@@ -1142,20 +1089,14 @@ export function EventsView() {
 
   return (
     <View style={styles.container}>
-      <Text> Events Screen</Text>
-      <TextInput
-        style={styles.textInputStyle}
-        onChangeText={(text) => searchFilteredEvents(text)}
+      <Searchbar
+        placeholder="Search Events"
         value={search}
+        onChangeText={(text) => searchFilteredEvents(text)}
         underlineColorAndroid="transparent"
-        placeholder="Search Here"
       />
-      <FlatList
-        data={filteredEvents}
-        keyExtractor={(item, index) => index.toString()}
-        ItemSeparatorComponent={EventSeparatorView}
-        renderItem={ItemView}
-      />
+
+      <FlatList data={filteredEvents} keyExtractor={(item, index) => index.toString()} renderItem={ItemView} />
 
       {/* <Text style={styles.text}>Events length is:  {events.length}</Text>
         {events.map((event) => (
@@ -1176,11 +1117,11 @@ export function EventsView() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 40,
+    padding: 60,
     flex: 1,
     backgroundColor: '#800B1A',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   text: {
     color: '#F5D68F',
