@@ -83,5 +83,6 @@ const styles = StyleSheet.create({
   action_buttons_text: {
     // color: '#fff',
     fontSize: 18,
+    color: '#b51717',
   },
 })

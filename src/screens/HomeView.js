@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     marginTop: '10%',
   },
   text: {
-    color: '#b51717',
+    color: '#800b1a',
     marginTop: '50%',
     fontSize: 50,
     marginLeft: 25,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 40,
     textAlign: 'center',
-    color: '#800b1a',
+    color: '#F5D68F',
     fontWeight: 'bold',
   },
 })

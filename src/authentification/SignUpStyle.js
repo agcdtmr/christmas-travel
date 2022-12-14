@@ -22,6 +22,7 @@ export const signupStyle = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginBottom: 5,
+    backgroundColor: '#27ae61',
   },
   textinput: {
     margin: 4,

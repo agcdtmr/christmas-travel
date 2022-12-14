@@ -64,7 +64,7 @@ export default function LoginScreen(props) {
                     testID="forgotButton"
                     disabled={values.email == '' || errors.email ? true : false}
                     style={loginStyle.cardbutton}
-                    textColor="#F5D68F"
+                    textColor="#800b1a"
                   >
                     Forgot Password
                   </Button>
@@ -74,8 +74,8 @@ export default function LoginScreen(props) {
                     // onPress={() => navigation.navigate("Home")}
                     testID="loginButton"
                     style={loginStyle.cardbutton}
-                    buttonColor="#287D4D"
-                    textColor="#F5D68F"
+                    buttonColor="#27ae61"
+                    textColor="#b51717"
                     mode="contained"
                   >
                     Login
@@ -86,8 +86,8 @@ export default function LoginScreen(props) {
                     onPress={signup}
                     testID="signupButton"
                     style={loginStyle.cardbutton}
-                    buttonColor="#287D4D"
-                    textColor="#F5D68F"
+                    buttonColor="#27ae61"
+                    textColor="#b51717"
                     mode="contained"
                   >
                     Sign Up

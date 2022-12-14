@@ -42,7 +42,7 @@ function SignUpScreen(props) {
             testID="signupButton"
             style={signupStyle.cardbutton}
             buttonColor="#287D4D"
-            textColor="#F5D68F"
+            textColor="#b51717"
             mode="contained"
           >
             Sign Up
