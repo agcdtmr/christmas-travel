@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     marginTop: '10%',
   },
   text: {
-    color: '#287d4d',
+    color: '#800b1a',
     marginTop: '50%',
     fontSize: 50,
     marginLeft: 25,
@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 3,
     borderColor: '#247246',
-    backgroundColor: '#287D4D',
+    backgroundColor: '#eca824',
     borderRadius: 20,
     alignSelf: 'center',
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 40,
     textAlign: 'center',
-    color: '#27AE61',
+    color: '#F5D68F',
     fontWeight: 'bold',
   },
 })

@@ -4,17 +4,19 @@ export const loginStyle = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
-    padding: 30,
+    padding: 25,
     backgroundColor: '#800B1A',
     justifyContent: 'center',
   },
   card: {
-    backgroundColor: '#ECA824',
+    backgroundColor: '#eca824',
     marginTop: 30,
     borderRadius: 20,
+    paddingVertical: 10,
   },
   cardtitle: {
     color: '#ECA824',
+    textAlign: 'center',
   },
   cardbutton: {
     margin: 4,

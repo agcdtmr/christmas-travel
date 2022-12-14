@@ -36,9 +36,9 @@ export const ItemView = ({ item }) => {
 
   return (
     <Card style={styles.menuContainer}>
-      <Card.Title title={item.name} />
+      <Card.Title titleVariant="titleLarge" title={item.name} />
       <Card.Content style={styles.menuItemBody}>
-        <Paragraph>{item.summary}</Paragraph>
+        <Paragraph style={styles.paragraph}>{item.summary}</Paragraph>
         <Paragraph>
           <TouchableOpacity>
             <View style={styles.action_buttons}>
@@ -58,10 +58,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   menuContainer: {
-    backgroundColor: '#f5d68f',
+    backgroundColor: '#eca824',
     // borderRadius: 10,
     margin: 10,
     marginTop: 2,
+  },
+  paragraph: {
+    fontSize: 20,
   },
   menuItemBody: {
     // marginTop: 5,
@@ -70,16 +73,16 @@ const styles = StyleSheet.create({
   action_buttons: {
     width: 50,
     elevation: 8,
-    backgroundColor: '#b51717',
+    backgroundColor: '#27ae61',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 5,
     paddingHorizontal: 5,
-    paddingVertical: 2,
+    paddingVertical: 3,
   },
   action_buttons_text: {
     // color: '#fff',
-    // fontSize: 16,
-    // padding: 5,
+    fontSize: 18,
+    color: '#b51717',
   },
 })
