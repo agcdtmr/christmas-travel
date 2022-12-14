@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@expo/webpack-config": "^0.17.2",
+    "@expo/webpack-config": "^0.17.3",
     "@react-navigation/bottom-tabs": "^6.4.3",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
