@@ -8,25 +8,44 @@ import { Formik } from 'formik';
 import { loginForm } from './LoginForm';
 import { useDispatch } from 'react-redux';
 import { onLogIn } from '../reducer/LogInSlice';
+import { useSelector } from 'react-redux';
 
 
 export default function LoginScreen(props) { 
 
+    //    const{navigation}=props;
+    const login = () => props.navigation.navigate("Home")
+    const signup = () => props.navigation.navigate("SignUp")
+
     const [email, setEmail]= useState("")
     const [password, setPassword] = useState("")
 
+    const loginError = [""]
+
+//!!!!!!!!!!
+    // const currentUser = useSelector((state) => state.login.loggedInUser)
+    // console.log("useSelector", currentUser)
+
+    const currentLogInStatus = useSelector((state) => state.login.isloggedIn)
+    const logInStatusMessage = useSelector((state) => state.login.logInStatus)
     const dispatch = useDispatch()
 
     const sendValues=() => {
         console.log("email sent", email)
         console.log("password sent", password)
         dispatch(onLogIn({email, password})) 
+
+
+        if(currentLogInStatus){
+            login()
+        }
+        // else {
+        //     loginError = [...logInStatusMessage]
+
+        // }
     }
 
 
-//    const{navigation}=props;
-    const login = () => props.navigation.navigate("Home")
-    const signup = () => props.navigation.navigate("SignUp")
 
     return (
         <SafeAreaView style={loginStyle.container}>
@@ -52,11 +71,12 @@ export default function LoginScreen(props) {
                         onFocus={() => setFieldTouched('email')}/>
 
 
-                        {
+                        {/* {
                             touched.email && errors.email ? 
                         <Text testID="error-email" style={{color:"white",backgroundColor:"red"}}>{errors.email}</Text>
                             : null
-                        }
+                        } */}
+
                         <TextInput 
                         style={loginStyle.textinput} backgroundColor="#8EC278" textColor='#287D4D' 
                         label="Password" 
@@ -65,13 +85,18 @@ export default function LoginScreen(props) {
                         onChangeText={(text) => {handleChange('password'), setPassword(text)}}
                         onFocus={() => setFieldTouched('password')}/>
 
-
-
                         {
+                            logInStatusMessage != "" ?
+                            <Text>{logInStatusMessage}</Text> : null
+                        }
+
+
+
+                        {/* {
                             touched.password && errors.password ? 
                         <Text testID="error-password" style={{color:"white",backgroundColor:"red"}}>{errors.password}</Text>
                             : null
-                        }
+                        } */}
                         
                         <Button  
                         testID='forgotButton'
@@ -92,7 +117,8 @@ export default function LoginScreen(props) {
 
                         </>
                     )}
-                </Formik>            
+                </Formik>    
+               {/* <Text> {currentUser.email} </Text>          */}
             </Card.Content>
         </View>
         </ScrollView>

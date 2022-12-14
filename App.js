@@ -17,7 +17,7 @@ import logInReducer from "./src/reducer/LogInSlice";
 
 export const store = configureStore({
   reducer: {
-    logIn:logInReducer
+    login: logInReducer
   }
 })
 
