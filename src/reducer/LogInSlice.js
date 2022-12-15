@@ -26,10 +26,10 @@ const emailAndPasswordValidation = (newEmail,newPassword,state) => {
         state.logInStatus = "email doesn't exist"
         
 
-    // } else if (typeof currentUser[0].password !="undefined" || currentUser[0].password != newPassword){
-    //         console.log("wrong password")
+    } else if (typeof currentUser[0].password =="undefined" || currentUser[0].password != newPassword){
+            console.log("wrong password")
 
-    //         state.logInStatus = "wrong password"
+            state.logInStatus = "wrong password"
             
     } else {
         console.log("else here")

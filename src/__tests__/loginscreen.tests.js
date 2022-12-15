@@ -6,38 +6,42 @@ import { loginForm } from "../authentification/LoginForm";
 
  describe("Login screen", ()=>{
 
-    it ("should go on home page on pressing the login button",async () =>{
-        const navigation = {navigate: ()=> {}}
-        jest.spyOn(navigation, 'navigate');
+    // it ("should go on home page on pressing the login button",async () =>{
+    //     const navigation = {navigate: ()=> {}}
+    //     jest.spyOn(navigation, 'navigate');
         
-        const page=render(<LoginScreen navigation={navigation} />);
+    //     const page=render(<LoginScreen navigation={navigation} />);
 
-        const email = page.getByTestId("email");
-        const password = page.getByTestId("password");
-        fireEvent.changeText(email,"valid@email.com");
-        fireEvent.changeText(password, "12345678");
+    //     const email = page.getByTestId("email");
+    //     const password = page.getByTestId("password");
+    //     fireEvent.changeText(email,"valid@email.com");
+    //     fireEvent.changeText(password, "12345678");
 
 
-        const loginButton = page.getByTestId("loginButton");
+    //     const loginButton = page.getByTestId("loginButton");
 
-        fireEvent.press(loginButton);
+    //     fireEvent.press(loginButton);
 
-        await waitFor (() => expect(navigation.navigate).toHaveBeenCalledWith("Home"));
-    })
+    //     await waitFor (() => expect(navigation.navigate).toHaveBeenCalledWith("Home"));
+    // })
 
-    it("should go to signup page on pressing signup button", ()=>{
-        const navigation = {navigate: () => {}}
-        jest.spyOn(navigation, 'navigate');
 
-        const page = render(<LoginScreen navigation={navigation} />)
 
-        const signupButton = page. getByTestId("signupButton");
+    // it("should go to signup page on pressing signup button", ()=>{
+    //     const navigation = {navigate: () => {}}
+    //     jest.spyOn(navigation, 'navigate');
+
+    //     const page = render(<LoginScreen navigation={navigation} />)
+
+    //     const signupButton = page. getByTestId("signupButton");
         
-        fireEvent.press(signupButton);
+    //     fireEvent.press(signupButton);
 
-        expect(navigation.navigate).toHaveBeenCalledWith("SignUp")
+    //     expect(navigation.navigate).toHaveBeenCalledWith("SignUp")
 
-    })
+    // })
+
+
 
     it("form invalid if email is empty", () => {
         const formValues = {email: ""};
@@ -64,68 +68,82 @@ import { loginForm } from "../authentification/LoginForm";
         expect(loginForm.isValidSync(formValues)).toBeTruthy();
     })
 
+
+
     //EMAIL
 
-    it("form should show error message if email field is touched and it is empty", async () => {
-        const page = render(<LoginScreen/>)
 
-        const email=page.getByTestId("email");
-        fireEvent.changeText(email,"");
 
-        const loginButton = page.getByTestId("loginButton");
-        fireEvent.press(loginButton);
+//     it("form should show error message if email field is touched and it is empty", async () => {
+//         const page = render(<LoginScreen/>)
 
-        await waitFor(()=> page.getByTestId("error-email"));
-    })
+//         const email=page.getByTestId("email");
+//         fireEvent.changeText(email,"");
 
-    it ('form should hide error message if email field is not touched', async () => {
-        const page = render (<LoginScreen/>);
-        await waitFor(() => expect(page.queryAllByTestId("error-email").length).toEqual(0));
+//         const loginButton = page.getByTestId("loginButton");
+//         fireEvent.press(loginButton);
 
-    })
+//         await waitFor(()=> page.getByTestId("error-email"));
+//     })
 
-    //PASSWORD
 
-    it("form should show error message if password field is touched and it is empty", async () => {
-        const page = render(<LoginScreen/>)
 
-        const password=page.getByTestId("password");
-        fireEvent.changeText(password,"");
+//     it ('form should hide error message if email field is not touched', async () => {
+//         const page = render (<LoginScreen/>);
+//         await waitFor(() => expect(page.queryAllByTestId("error-email").length).toEqual(0));
 
-        const loginButton = page.getByTestId("loginButton");
-        fireEvent.press(loginButton);
+//     })
 
-        await waitFor(()=> page.getByTestId("error-password"));
-    })
 
-    it ('form should hide error message if password field is not touched', async () => {
-        const page = render (<LoginScreen/>);
-        await waitFor(() => expect(page.queryAllByTestId("error-password").length).toEqual(0));
 
-    })
+//     //PASSWORD
 
-    // FORGOT PASSWORD
+//     it("form should show error message if password field is touched and it is empty", async () => {
+//         const page = render(<LoginScreen/>)
 
-    it ("form should disable Forgot Password button if email is empty", async() => {
-        const page = render(<LoginScreen/>);
+//         const password=page.getByTestId("password");
+//         fireEvent.changeText(password,"");
 
-        const forgotButton = page.getByTestId("forgotButton");
+//         const loginButton = page.getByTestId("loginButton");
+//         fireEvent.press(loginButton);
 
-        await waitFor(() => expect(forgotButton.props.accessibilityState.disabled).toBeTruthy());
-    })
+//         await waitFor(()=> page.getByTestId("error-password"));
+//     })
 
-    it ("form should disable forgot button if email has error", async () => {
-        const page = render(<LoginScreen/>);
 
-        const email = page.getByTestId("email");
-        fireEvent.changeText(email, "invalid");
 
-        const forgotButton = page.getByTestId("forgotButton");
+//     it ('form should hide error message if password field is not touched', async () => {
+//         const page = render (<LoginScreen/>);
+//         await waitFor(() => expect(page.queryAllByTestId("error-password").length).toEqual(0));
 
-        await waitFor(() => expect(forgotButton.props.accessibilityState.disabled).toBeTruthy());
+//     })
+
+
+
+//     // FORGOT PASSWORD
+
+//     it ("form should disable Forgot Password button if email is empty", async() => {
+//         const page = render(<LoginScreen/>);
+
+//         const forgotButton = page.getByTestId("forgotButton");
+
+//         await waitFor(() => expect(forgotButton.props.accessibilityState.disabled).toBeTruthy());
+//     })
+
+
+
+//     it ("form should disable forgot button if email has error", async () => {
+//         const page = render(<LoginScreen/>);
+
+//         const email = page.getByTestId("email");
+//         fireEvent.changeText(email, "invalid");
+
+//         const forgotButton = page.getByTestId("forgotButton");
+
+//         await waitFor(() => expect(forgotButton.props.accessibilityState.disabled).toBeTruthy());
 
         
-    })
+//     })
 
 
 
