@@ -1,5 +1,5 @@
 import { ImageStore, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { Card, Paragraph } from 'react-native-paper'
+import { Card, Paragraph, Button } from 'react-native-paper'
 
 // export function EventCard({ location, event_date, event_time, title, short_description }) {
 //   return (
@@ -41,10 +41,19 @@ export const ItemView = ({ item }) => {
         <Paragraph style={styles.paragraph}>{item.summary}</Paragraph>
         <Paragraph>
           <TouchableOpacity>
-            <View style={styles.action_buttons}>
-              <Text onPress={() => getEvent(item)} style={styles.action_buttons_text}>
+            <View>
+              <Button
+                mode="contained"
+                buttonColor="#27ae61"
+                contentStyle={{ height: 40 }}
+                labelStyle={{ color: '#b51717', fontSize: 16 }}
+                onPress={() => getEvent(item)}
+              >
+                {'Save'}
+              </Button>
+              {/* <Text onPress={() => getEvent(item)} style={styles.action_buttons_text}>
                 Save
-              </Text>
+              </Text> */}
             </View>
           </TouchableOpacity>
         </Paragraph>

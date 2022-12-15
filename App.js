@@ -12,8 +12,14 @@ import LoginScreen from './src/authentification/LoginScreen'
 import SignUpScreen from './src/authentification/SignUpScreen'
 import 'react-native-gesture-handler'
 import { configureStore } from '@reduxjs/toolkit'
-
+import logInReducer from './src/reducer/LogInSlice'
 //REDUX
+
+export const store = configureStore({
+  reducer: {
+    login: logInReducer,
+  },
+})
 
 // const initialState = {LogIn: {username:null, password:null }}
 
@@ -38,41 +44,42 @@ const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          headerShown: false,
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName
-            if (route.name === 'Home') {
-              iconName = focused ? 'home' : 'home-outline'
-            } else if (route.name === 'Auth') {
-              iconName = focused ? 'checkbox' : 'checkbox-outline'
-            } else if (route.name === 'Events') {
-              iconName = focused ? 'earth' : 'earth-outline'
-            } else if (route.name === 'EventCard') {
-              iconName = focused ? 'trail-sign' : 'trail-sign-outline'
-            } else if (route.name === 'Count Down') {
-              iconName = focused ? 'alarm' : 'alarm-outline'
-            }
+    <Provider store={store}>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            headerShown: false,
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName
+              if (route.name === 'Home') {
+                iconName = focused ? 'home' : 'home-outline'
+              } else if (route.name === 'Auth') {
+                iconName = focused ? 'checkbox' : 'checkbox-outline'
+              } else if (route.name === 'Events') {
+                iconName = focused ? 'earth' : 'earth-outline'
+              } else if (route.name === 'EventCard') {
+                iconName = focused ? 'trail-sign' : 'trail-sign-outline'
+              } else if (route.name === 'Profile') {
+                iconName = focused ? 'happy' : 'happy-outline'
+              }
 
-            return <Ionic name={iconName} size={size} color={color} />
-          },
-          tabBarActiveTintColor: '#f5d68f',
-          tabBarInactiveTintColor: '#f5d68f',
-          tabBarStyle: {
-            backgroundColor: '#287d4d',
-            height: 60,
-          },
-        })}
-      >
-        <Tab.Screen name="Home" component={HomeView} />
-        <Tab.Screen name="Auth" component={AuthStackScreen} />
-        <Tab.Screen name="Events" component={EventsView} />
-        <Tab.Screen name="EventCard" component={EventCardView} />
-        <Tab.Screen name="Count Down" component={CountDownView} />
-      </Tab.Navigator>
-    </NavigationContainer>
+              return <Ionic name={iconName} size={size} color={color} />
+            },
+            tabBarActiveTintColor: '#ffffff',
+            tabBarInactiveTintColor: '#f5d68f',
+            tabBarStyle: {
+              backgroundColor: '#287d4d',
+              height: 60,
+            },
+          })}
+        >
+          <Tab.Screen name="Home" component={HomeView} />
+          <Tab.Screen name="Auth" component={AuthStackScreen} />
+          <Tab.Screen name="Events" component={EventsView} />
+          <Tab.Screen name="EventCard" component={EventCardView} />
+          <Tab.Screen name="Profile" component={CountDownView} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </Provider>
   )
 }
-
