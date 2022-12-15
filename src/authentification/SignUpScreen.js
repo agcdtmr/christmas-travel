@@ -41,7 +41,7 @@ function SignUpScreen(props) {
             onPress={signup}
             testID="signupButton"
             style={signupStyle.cardbutton}
-            buttonColor="#287D4D"
+            buttonColor="27ae61"
             textColor="#b51717"
             mode="contained"
           >

@@ -1,6 +1,6 @@
 import { EventsView } from './src/screens/EventsView'
 import { HomeView } from './src/screens/HomeView'
-import ProfileView from './src/screens/ProfileView'
+import CountDownView from './src/screens/ProfileView'
 import EventCardView from './src/screens/EventCardView'
 import { Provider } from 'react-redux'
 import { Provider as PaperProvider } from 'react-native-paper'
@@ -52,13 +52,13 @@ export default function App() {
               iconName = focused ? 'earth' : 'earth-outline'
             } else if (route.name === 'EventCard') {
               iconName = focused ? 'trail-sign' : 'trail-sign-outline'
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'happy' : 'happy-outline'
+            } else if (route.name === 'Count Down') {
+              iconName = focused ? 'alarm' : 'alarm-outline'
             }
 
             return <Ionic name={iconName} size={size} color={color} />
           },
-          tabBarActiveTintColor: '#ffffff',
+          tabBarActiveTintColor: '#f5d68f',
           tabBarInactiveTintColor: '#f5d68f',
           tabBarStyle: {
             backgroundColor: '#287d4d',
@@ -70,26 +70,9 @@ export default function App() {
         <Tab.Screen name="Auth" component={AuthStackScreen} />
         <Tab.Screen name="Events" component={EventsView} />
         <Tab.Screen name="EventCard" component={EventCardView} />
-        <Tab.Screen name="Profile" component={ProfileView} />
+        <Tab.Screen name="Count Down" component={CountDownView} />
       </Tab.Navigator>
     </NavigationContainer>
   )
 }
 
-///////////////////////////////
-
-// const Stack = createNativeStackNavigator();
-
-{
-  /* export default function App() {
-
-return (
-  <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home">
-     <Stack.Screen name='Home' component={HomeView}/>
-     <Stack.Screen name='Events' component={EventsView}/>
-    </Stack.Navigator>
-  </NavigationContainer>
-  
-); */
-}
