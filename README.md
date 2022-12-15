@@ -54,6 +54,7 @@ This section lists all the major frameworks or libraries used to put this projec
 - [Countdown Component](react-native-countdown-component)
 - [Snowflakes Animation](https://www.npmjs.com/package/react-native-snowflakes)
 - [Christmas Color Palette](https://coolors.co/287d4d-27ae61-f5d68f-eca824-b51717-800b1a)
+- [Lottie](https://github.com/lottie-react-native/lottie-react-native)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
