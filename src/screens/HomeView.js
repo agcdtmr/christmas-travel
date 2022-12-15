@@ -6,16 +6,20 @@ import { Appbar, Searchbar } from 'react-native-paper'
 import { useState } from 'react'
 import Lottie from 'lottie-react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import Snowflakes from 'react-native-snowflakes'
 
 // put {navigation} inside HomeView (...)
 export function HomeView({ navigation }) {
   return (
-    <ImageBackground source={require('../../assets/background.jpeg')} style={styles.background}>
+    <ImageBackground source={require('../../assets/background.jpg')} style={styles.background}>
       <View>
         <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain"></Image>
-        <Text style={styles.text}>Christmas is doing a little something extra for someone. You are someone.</Text>
+        <Text style={styles.text}>
+          {'Christmas is doing a little something extra for someone. You are someone special.'}
+        </Text>
         <MyButton />
       </View>
+      <Snowflakes />
     </ImageBackground>
   )
 }
@@ -30,22 +34,19 @@ const styles = StyleSheet.create({
   },
   background: {
     width: '100%',
-    height: '100%',
+    height: '105%',
   },
   logo: {
     width: 50,
     height: 100,
-    marginLeft: '7%',
-    marginTop: '10%',
+    marginLeft: '82%',
+    marginTop: '7%',
   },
   text: {
-    color: '#800b1a',
-    marginTop: '50%',
-    fontSize: 50,
-    marginLeft: 25,
-    marginRight: 25,
-    // padding: 20,
-    // marginLeft: '20%',
+    color: '#F5D68F',
+    marginTop: '40%',
+    fontSize: 45,
+    paddingHorizontal: 25,
   },
   // text: {
   //   color: '#F5D68F',

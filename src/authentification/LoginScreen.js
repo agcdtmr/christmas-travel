@@ -64,7 +64,7 @@ export default function LoginScreen(props) {
                     testID="forgotButton"
                     disabled={values.email == '' || errors.email ? true : false}
                     style={loginStyle.cardbutton}
-                    textColor="#800b1a"
+                    textColor="#27ae61"
                   >
                     Forgot Password
                   </Button>
