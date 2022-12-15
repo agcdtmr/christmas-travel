@@ -1,4 +1,4 @@
-<p align="center"><img width=40% src="assets/simulator.png"></p>
+![This Christmas App](assets/simulator.png)
 
 # Christmas Travel App
 
