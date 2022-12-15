@@ -123,8 +123,8 @@ export default function LoginScreen(props) {
                     onPress={signup}
                     testID="signupButton"
                     style={loginStyle.cardbutton}
-                    buttonColor="#287D4D"
-                    textColor="#F5D68F"
+                    buttonColor="#27ae61"
+                    textColor="#b51717"
                     mode="contained"
                   >
                     Sign Up
