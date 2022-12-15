@@ -91,5 +91,5 @@ This project is open source and all ownership rights are attributed to the autho
 
 ## Project Status
 
-This website is created as a group project for Code First Girls Mobile App Development +Masters Course.
+This mobile app is created as a group project for Code First Girls Mobile App Development +Masters Course.
 The development has stopped completely as we have submitted and presented this project.
