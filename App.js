@@ -59,7 +59,7 @@ export default function App() {
                 iconName = focused ? 'earth' : 'earth-outline'
               } else if (route.name === 'EventCard') {
                 iconName = focused ? 'trail-sign' : 'trail-sign-outline'
-              } else if (route.name === 'Profile') {
+              } else if (route.name === 'CountDown') {
                 iconName = focused ? 'happy' : 'happy-outline'
               }
 
@@ -77,7 +77,7 @@ export default function App() {
           <Tab.Screen name="Auth" component={AuthStackScreen} />
           <Tab.Screen name="Events" component={EventsView} />
           <Tab.Screen name="EventCard" component={EventCardView} />
-          <Tab.Screen name="Profile" component={CountDownView} />
+          <Tab.Screen name="CountDown" component={CountDownView} />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>
