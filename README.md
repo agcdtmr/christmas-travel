@@ -1,4 +1,4 @@
-![This Christmas App](assets/simulator.png)
+![This Christmas App](assets/simulator.png | width=100)
 
 # Christmas Travel App
 
