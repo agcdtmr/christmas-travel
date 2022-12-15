@@ -1,4 +1,5 @@
-![This Christmas App](assets/simulator.png | width=100)
+<img src="assets/simulator.png" width="200" height="400" />
+<!-- ![This Christmas App](assets/simulator.png | width=100) -->
 
 # Christmas Travel App
 
