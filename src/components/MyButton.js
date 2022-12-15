@@ -9,7 +9,7 @@ function MyButton({}) {
 
   return (
     <View style={styles.button}>
-      <Button title="Let's do extra" color="#b51717" onPress={() => navigation.navigate('Events')} />
+      <Button title="Do extra" color="#b51717" onPress={() => navigation.navigate('Events')} />
     </View>
   )
 }
@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 10,
     borderWidth: 3,
-    borderColor: '#b51717',
-    backgroundColor: 'white',
-    borderRadius: 20,
+    borderColor: '#f5d68f',
+    backgroundColor: '#27ae61',
+    borderRadius: 50,
     alignSelf: 'center',
   },
   //   buttonText: {
